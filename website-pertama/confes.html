@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You ❤️</title>
+
+<style>
+body{
+    margin:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:linear-gradient(135deg,#ff8fb1,#ffc0cb);
+    font-family:Arial,sans-serif;
+    overflow:hidden;
+}
+
+.card{
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+    animation:fade .8s;
+}
+
+button{
+    margin-top:20px;
+    padding:10px 25px;
+    border:none;
+    border-radius:30px;
+    background:#ff4d88;
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.08);
+}
+
+#msg{
+    margin-top:20px;
+    display:none;
+    font-size:18px;
+    color:#ff4d88;
+}
+
+.heart{
+    position:absolute;
+    color:red;
+    animation:fall 5s linear infinite;
+    font-size:20px;
+}
+
+@keyframes fall{
+    from{
+        transform:translateY(-100vh);
+    }
+    to{
+        transform:translateY(100vh);
+    }
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:scale(.8);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>Hi, ada sesuatu buat kamu ❤️</h1>
+    <p>Klik tombol di bawah yaa.</p>
+
+    <button onclick="showMsg()">Buka</button>
+
+    <div id="msg">
+        🌹<br><br>
+        Sebenarnya...
+        <br><br>
+        <b>Aku suka sama kamu.</b>
+        <br><br>
+        Semoga kamu nggak keberatan kalau aku jujur. 😊❤️
+    </div>
+</div>
+
+<script>
+function showMsg(){
+    document.getElementById("msg").style.display="block";
+}
+
+setInterval(()=>{
+    const heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="❤️";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.fontSize=(Math.random()*20+15)+"px";
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },5000);
+},300);
+</script>
+
+</body>
+</html>

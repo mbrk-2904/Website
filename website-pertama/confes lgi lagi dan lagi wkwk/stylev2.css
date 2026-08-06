@@ -1,0 +1,683 @@
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+
+    width:100%;
+    height:100%;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    overflow:hidden;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:#0f1020;
+
+    position:relative;
+
+}
+
+/* =========================
+   HIDDEN
+========================= */
+
+.hidden{
+
+    display:none;
+
+}
+
+/* =========================
+   AURORA
+========================= */
+
+.aurora{
+
+    position:fixed;
+    inset:0;
+
+    overflow:hidden;
+
+    z-index:-10;
+
+}
+
+.blob{
+
+    position:absolute;
+
+    width:550px;
+    height:550px;
+
+    border-radius:50%;
+
+    filter:blur(110px);
+
+    opacity:.55;
+
+    animation:move 18s ease-in-out infinite alternate;
+
+}
+
+.pink{
+
+    background:#ff78b6;
+
+    left:-120px;
+    top:-100px;
+
+}
+
+.blue{
+
+    background:#7ad7ff;
+
+    right:-120px;
+    bottom:-120px;
+
+}
+
+.yellow{
+
+    background:#ffe97b;
+
+    left:35%;
+    top:40%;
+
+}
+
+@keyframes move{
+
+    from{
+
+        transform:
+        translate(0,0)
+        scale(1);
+
+    }
+
+    to{
+
+        transform:
+        translate(70px,-40px)
+        scale(1.2);
+
+    }
+
+}
+
+/* =========================
+   GLASS CARD
+========================= */
+
+.glass{
+
+    width:430px;
+
+    padding:35px;
+
+    text-align:center;
+
+    border-radius:28px;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.35);
+
+    animation:pop .7s;
+
+}
+
+@keyframes pop{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        scale(.85);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        scale(1);
+
+    }
+
+}
+
+/* =========================
+   CAT
+========================= */
+
+.cat{
+
+    width:190px;
+
+    margin-bottom:20px;
+
+    animation:bounce 2.2s infinite;
+
+    filter:
+    drop-shadow(
+    0 12px 18px rgba(0,0,0,.25));
+
+}
+
+@keyframes bounce{
+
+    0%,100%{
+
+        transform:
+        translateY(0);
+
+    }
+
+    50%{
+
+        transform:
+        translateY(-12px);
+
+    }
+
+}
+
+/* =========================
+   TEXT
+========================= */
+
+h1{
+
+    color:white;
+
+    margin-bottom:15px;
+
+}
+
+h2{
+
+    color:#ffd9ef;
+
+    margin-bottom:12px;
+
+}
+
+p{
+
+    color:#f5f5f5;
+
+    line-height:30px;
+
+    font-size:16px;
+
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+button{
+
+    margin-top:25px;
+
+    border:none;
+
+    border-radius:999px;
+
+    padding:14px 34px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+button:hover{
+
+    transform:scale(1.08);
+
+}
+
+#openLetter{
+
+    background:#ff70ad;
+
+    color:white;
+
+}
+
+#yes{
+
+    background:#66d98d;
+
+    color:white;
+
+}
+
+#no{
+
+    background:#ff6868;
+
+    color:white;
+
+    position:absolute;
+
+}
+
+.choice{
+
+    margin-top:30px;
+
+    position:relative;
+
+    height:130px;
+
+}
+
+/* =========================
+   PHOTO
+========================= */
+
+#photo{
+
+    width:220px;
+
+    border-radius:20px;
+
+    margin:25px 0;
+
+    opacity:0;
+
+    transform:scale(.8);
+
+    filter:blur(15px);
+
+    transition:1s;
+
+}
+
+.showPhoto{
+
+    opacity:1 !important;
+
+    transform:scale(1) !important;
+
+    filter:none !important;
+
+}
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+#countdown{
+
+    font-size:90px;
+
+    font-weight:bold;
+
+    color:white;
+
+    margin-bottom:20px;
+
+    text-shadow:
+    0 0 25px hotpink;
+
+}
+
+/* =========================
+   LOADER
+========================= */
+
+.loader{
+
+    width:70px;
+
+    height:70px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    border:7px solid rgba(255,255,255,.2);
+
+    border-top-color:#ff70ad;
+
+    animation:spin 1s linear infinite;
+
+    margin-bottom:25px;
+
+}
+
+@keyframes spin{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/* =========================
+   STARS
+========================= */
+
+.star{
+
+    position:fixed;
+
+    width:2px;
+
+    height:2px;
+
+    border-radius:50%;
+
+    background:white;
+
+    animation:twinkle 2s infinite alternate;
+
+}
+
+@keyframes twinkle{
+
+    from{
+
+        opacity:.2;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:600px){
+
+.glass{
+
+    width:92%;
+
+    padding:25px;
+
+}
+
+.cat{
+
+    width:150px;
+
+}
+
+h1{
+
+    font-size:28px;
+
+}
+
+p{
+
+    font-size:15px;
+
+}
+
+}
+
+/* ===========================
+   PART 1C-2
+=========================== */
+
+.choice{
+
+    position:relative;
+
+    width:100%;
+
+    height:170px;
+
+    margin-top:30px;
+
+}
+
+#yes,
+#no{
+
+    min-width:120px;
+
+}
+
+#yes{
+
+    position:absolute;
+
+    left:20px;
+
+    top:20px;
+
+}
+
+#no{
+
+    position:absolute;
+
+    right:20px;
+
+    top:20px;
+
+}
+
+.confetti{
+
+position:fixed;
+
+width:10px;
+height:10px;
+
+border-radius:2px;
+
+top:-20px;
+
+animation:fallConfetti linear forwards;
+
+}
+
+@keyframes fallConfetti{
+
+0%{
+
+transform:
+translateY(0)
+rotate(0deg);
+
+}
+
+100%{
+
+transform:
+translateY(120vh)
+rotate(720deg);
+
+}
+
+}
+
+/* ===========================
+   PART 3 - CURSOR GLOW
+=========================== */
+
+.cursorGlow{
+
+    position:fixed;
+
+    width:40px;
+    height:40px;
+
+    border-radius:50%;
+
+    background:
+    rgba(255,120,180,.35);
+
+    pointer-events:none;
+
+    transform:translate(-50%,-50%);
+
+    filter:blur(15px);
+
+    z-index:999;
+
+}
+
+/* HEART */
+
+@keyframes heartUp{
+
+    from{
+
+        transform:
+        translateY(0)
+        rotate(0deg);
+
+        opacity:1;
+
+    }
+
+
+    to{
+
+        transform:
+        translateY(-110vh)
+        rotate(360deg);
+
+        opacity:0;
+
+    }
+
+}
+
+.cat{
+
+    animation:
+    bounce 2s infinite,
+    wiggle 4s infinite;
+
+}
+
+
+@keyframes wiggle{
+
+    0%,100%{
+
+        transform:rotate(0deg);
+
+    }
+
+
+    50%{
+
+        transform:rotate(5deg);
+
+    }
+
+}
+
+/* ===========================
+   PART 3D - CINEMATIC PHOTO
+=========================== */
+
+#photo{
+
+    width:240px;
+
+    border-radius:25px;
+
+    opacity:0;
+
+    filter:blur(20px);
+
+    transform:scale(.7);
+
+    transition:
+    1.5s ease;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.4);
+
+}
+
+
+#photo.showPhoto{
+
+    opacity:1;
+
+    filter:blur(0);
+
+    transform:scale(1);
+
+}
+
+#ending .glass{
+
+    animation:
+
+    endingPop 1.5s ease;
+
+}
+
+
+@keyframes endingPop{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        scale(.8)
+        translateY(40px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:
+        scale(1)
+        translateY(0);
+
+    }
+
+}

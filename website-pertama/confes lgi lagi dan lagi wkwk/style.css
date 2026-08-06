@@ -1,0 +1,710 @@
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+    overflow:hidden;
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:linear-gradient(
+    135deg,
+    #ffd6e7,
+    #ffe8c9,
+    #dff8ff);
+
+    position:relative;
+
+}
+
+
+/* ===========================
+   AURORA BACKGROUND
+=========================== */
+
+.aurora{
+
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    z-index:-5;
+
+}
+
+.circle{
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    border-radius:50%;
+
+    filter:blur(90px);
+
+    opacity:.65;
+
+    animation:float 15s infinite alternate;
+
+}
+
+.c1{
+
+    background:#ff7eb6;
+    top:-120px;
+    left:-120px;
+
+}
+
+.c2{
+
+    background:#8ec5ff;
+    right:-150px;
+    bottom:-120px;
+
+}
+
+.c3{
+
+    background:#fff4a8;
+
+    left:40%;
+    top:35%;
+
+}
+
+@keyframes float{
+
+    from{
+
+        transform:
+        translate(0,0)
+        scale(1);
+
+    }
+
+    to{
+
+        transform:
+        translate(60px,-40px)
+        scale(1.2);
+
+    }
+
+}
+
+
+
+/* ===========================
+   MAIN CARD
+=========================== */
+
+#main{
+
+    display:none;
+
+}
+
+.glass{
+
+    width:430px;
+
+    padding:40px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.25);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.4);
+
+    box-shadow:
+
+    0 20px 60px
+    rgba(0,0,0,.15);
+
+    text-align:center;
+
+    animation:pop .9s;
+
+}
+
+@keyframes pop{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        scale(.8);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        scale(1);
+
+    }
+
+}
+
+
+
+/* ===========================
+   MOFUSAND
+=========================== */
+
+.mofu{
+
+    width:200px;
+
+    margin-bottom:20px;
+
+    animation:
+    bounce 2.2s infinite;
+
+    filter:
+    drop-shadow(
+    0 12px 18px
+    rgba(0,0,0,.18));
+
+}
+
+@keyframes bounce{
+
+    0%,100%{
+
+        transform:
+        translateY(0);
+
+    }
+
+    50%{
+
+        transform:
+        translateY(-12px);
+
+    }
+
+}
+
+
+
+/* ===========================
+   TEXT
+=========================== */
+
+h1{
+
+    color:#ff5c96;
+
+    margin-bottom:15px;
+
+}
+
+h2{
+
+    color:#ff5c96;
+
+    margin-bottom:12px;
+
+}
+
+p{
+
+    color:#555;
+
+    line-height:30px;
+
+    font-size:17px;
+
+}
+
+
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+button{
+
+    margin-top:20px;
+
+    padding:14px 35px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    transition:.25s;
+
+    font-weight:600;
+
+}
+
+button:hover{
+
+    transform:scale(1.07);
+
+}
+
+#next{
+
+    background:#ff78aa;
+
+    color:white;
+
+}
+
+#yes{
+
+    background:#6fe29f;
+
+    color:white;
+
+}
+
+#no{
+
+    background:#ff6d6d;
+
+    color:white;
+
+    position:absolute;
+
+}
+
+.buttons{
+
+    position:relative;
+
+    height:130px;
+
+    margin-top:20px;
+
+}
+
+
+
+/* ===========================
+   LOADING
+=========================== */
+
+#loading{
+
+    text-align:center;
+
+}
+
+.loader{
+
+    width:75px;
+
+    height:75px;
+
+    border-radius:50%;
+
+    border:8px solid
+    rgba(255,255,255,.3);
+
+    border-top:8px solid
+    #ff69b4;
+
+    animation:
+    spin 1s linear infinite;
+
+    margin:auto;
+
+    margin-bottom:25px;
+
+}
+
+@keyframes spin{
+
+    to{
+
+        transform:
+        rotate(360deg);
+
+    }
+
+}
+
+
+
+/* ===========================
+   ENDING
+=========================== */
+
+#ending{
+
+    display:none;
+
+    text-align:center;
+
+}
+
+.photo{
+
+    width:230px;
+
+    border-radius:22px;
+
+    margin:25px 0;
+
+    box-shadow:
+    0 20px 45px
+    rgba(0,0,0,.18);
+
+}
+
+
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:600px){
+
+.glass{
+
+    width:92%;
+
+    padding:25px;
+
+}
+
+.mofu{
+
+    width:160px;
+
+}
+
+h1{
+
+    font-size:27px;
+
+}
+
+p{
+
+    font-size:15px;
+
+}
+
+}
+
+/* ===========================
+   PART 2A
+=========================== */
+
+/* Glow Card */
+
+.glass{
+
+    animation:
+    pop .8s,
+    glow 4s infinite alternate;
+
+}
+
+@keyframes glow{
+
+    from{
+
+        box-shadow:
+        0 20px 60px rgba(255,105,180,.15);
+
+    }
+
+    to{
+
+        box-shadow:
+        0 20px 80px rgba(255,105,180,.45);
+
+    }
+
+}
+
+
+/* Cursor */
+
+body{
+
+    cursor:url("https://cur.cursors-4u.net/nature/nat-11/nat1021.cur"),auto;
+
+}
+
+
+/* Tombol */
+
+#yes{
+
+    transition:
+    .3s;
+
+}
+
+#yes:hover{
+
+    transform:scale(1.15);
+
+    box-shadow:
+    0 0 25px hotpink;
+
+}
+
+
+/* Kucing */
+
+.mofu:hover{
+
+    transform:
+    rotate(-8deg)
+    scale(1.08);
+
+}
+
+
+/* Shake */
+
+.shake{
+
+animation:shake .3s;
+
+}
+
+@keyframes shake{
+
+0%{
+
+transform:translateX(0);
+
+}
+
+25%{
+
+transform:translateX(-6px);
+
+}
+
+50%{
+
+transform:translateX(6px);
+
+}
+
+75%{
+
+transform:translateX(-6px);
+
+}
+
+100%{
+
+transform:translateX(0);
+
+}
+
+}
+
+/* ===========================
+   PART 2B
+=========================== */
+
+.fadeOut{
+
+    animation:fadeOut .8s forwards;
+
+}
+
+@keyframes fadeOut{
+
+    from{
+
+        opacity:1;
+        transform:scale(1);
+
+    }
+
+    to{
+
+        opacity:0;
+        transform:scale(.8);
+
+    }
+
+}
+
+.popHeart{
+
+    position:fixed;
+
+    pointer-events:none;
+
+    animation:heartFly 3s linear forwards;
+
+}
+
+@keyframes heartFly{
+
+    from{
+
+        transform:
+        translateY(0)
+        scale(.5);
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:
+        translateY(-120vh)
+        scale(2);
+
+        opacity:0;
+
+    }
+
+}
+
+.confetti{
+
+    position:fixed;
+
+    width:12px;
+    height:12px;
+
+    border-radius:3px;
+
+    animation:
+    confettiFall
+    4s linear forwards;
+
+}
+
+@keyframes confettiFall{
+
+    from{
+
+        transform:
+        translateY(-50px)
+        rotate(0deg);
+
+    }
+
+    to{
+
+        transform:
+        translateY(110vh)
+        rotate(720deg);
+
+    }
+
+}
+
+/* ===========================
+   PART 2C
+=========================== */
+
+#ending{
+
+    display:none;
+
+    text-align:center;
+
+    animation:fadeIn 1s;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+#countdown{
+
+    font-size:80px;
+
+    color:white;
+
+    font-weight:bold;
+
+    margin-bottom:20px;
+
+    text-shadow:
+    0 0 20px hotpink;
+
+}
+
+.photo{
+
+    opacity:0;
+
+    filter:blur(15px);
+
+    transform:scale(.8);
+
+    transition:1s;
+
+}
+
+.showPhoto{
+
+    opacity:1;
+
+    filter:none;
+
+    transform:scale(1);
+
+}
+
+#endTitle{
+
+    color:#ff5b9f;
+
+    margin-top:25px;
+
+}
+
+#endText{
+
+    max-width:500px;
+
+    margin:auto;
+
+    line-height:30px;
+
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Letter For You ❤️</title>
+
+    <link rel="stylesheet" href="stylev2.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="stars"></div>
+<div id="petals"></div>
+
+<!-- Aurora -->
+<div class="aurora">
+    <div class="blob pink"></div>
+    <div class="blob blue"></div>
+    <div class="blob yellow"></div>
+</div>
+
+<!-- Stars -->
+<div id="stars"></div>
+
+<!-- Sakura -->
+<div id="petals"></div>
+
+<!-- Loading -->
+<section id="loading">
+
+    <div class="loader"></div>
+
+    <h2>Preparing your surprise...</h2>
+
+    <p>Please wait a moment 💖</p>
+
+</section>
+
+<!-- Main -->
+<section id="home" class="hidden">
+
+    <div class="glass">
+
+        <img
+        src="assets/cat.png"
+        class="cat"
+        alt="cat">
+
+        <h1>Hi 👋</h1>
+
+        <p id="typing"></p>
+
+        <button id="openLetter">
+            Open Letter 💌
+        </button>
+
+    </div>
+
+</section>
+
+<!-- Letter -->
+<section id="letter" class="hidden">
+
+    <div class="glass">
+
+        <h1>💌</h1>
+
+        <h2>For You</h2>
+
+        <p id="letterText"></p>
+
+        <div class="choice">
+
+            <button id="yes">
+                Iya ❤️
+            </button>
+
+            <button id="no">
+                Gamau 😤
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Ending -->
+<section id="ending" class="hidden">
+
+    <div class="glass">
+
+        <div id="countdown"></div>
+
+        <img id="photo" src="https://placekitten.com/300/300">
+
+        <h1 id="endTitle"></h1>
+
+        <p id="endMessage"></p>
+
+        <button id="restart">
+            Replay 🔄
+        </button>
+
+    </div>
+
+</section>
+
+<audio
+id="music"
+loop>
+
+<source
+src="assets/music.mp3"
+type="audio/mpeg">
+
+</audio>
+
+<script src="scriptv2.js"></script>
+
+</body>
+</html>
