@@ -154,6 +154,7 @@ function createPetals(){
 const openLetter = document.getElementById("openLetter");
 const yes = document.getElementById("yes");
 const no = document.getElementById("no");
+const cat = document.getElementById("cat");
 
 // ===============================
 // OPEN LETTER
@@ -166,6 +167,7 @@ openLetter.addEventListener("click",()=>{
     home.classList.add("hidden");
 
     letter.classList.remove("hidden");
+    letter.classList.add("fadeIn");
 
     letterText.innerHTML="";
 
@@ -270,6 +272,12 @@ const restart = document.getElementById("restart");
 // tombol IYA
 yes.addEventListener("click", () => {
 
+    if(cat){
+
+        cat.src="cat_happy.png";
+
+    }
+
     launchConfetti();
 
     playMusic();
@@ -279,6 +287,7 @@ yes.addEventListener("click", () => {
         letter.classList.add("hidden");
 
         ending.classList.remove("hidden");
+        ending.classList.add("fadeIn");
 
         startCountdown();
 
@@ -360,11 +369,19 @@ function typeEnding(){
 
 if(restart){
 
-    restart.onclick = ()=>{
+    restart.onclick=()=>{
 
-        location.reload();
+    if(music){
 
-    };
+        music.pause();
+
+        music.currentTime=0;
+
+    }
+
+    location.reload();
+
+}
 
 }
 
@@ -496,3 +513,127 @@ function playMusic(){
     },100);
 
 }
+
+// ===============================
+// PART 4 - CAT INTERACTION
+// ===============================
+
+
+
+function catBlink(){
+
+    if(!cat) return;
+
+
+    cat.classList.add("catBlink");
+
+
+    setTimeout(()=>{
+
+        cat.classList.remove("catBlink");
+
+    },300);
+
+}
+
+
+// kedip otomatis
+
+setInterval(()=>{
+
+    catBlink();
+
+},4000);
+
+
+
+
+// klik kucing
+
+cat.addEventListener("click",()=>{
+
+    cat.src="cat_happy.png";
+
+    showCatBubble();
+
+});
+
+
+
+function showCatBubble(){
+
+    const bubble=
+    document.createElement("div");
+
+
+    bubble.className="catBubble";
+
+
+    bubble.innerHTML="meow~ ❤️";
+
+
+    bubble.style.left=
+    "50%";
+
+
+    bubble.style.top=
+    "35%";
+
+
+    document.body.appendChild(bubble);
+
+
+
+    setTimeout(()=>{
+
+        bubble.remove();
+
+    },2000);
+
+}
+
+// ===============================
+// FIREFLIES
+// ===============================
+
+function createFirefly(){
+
+    const fly=document.createElement("div");
+
+    fly.innerHTML="✨";
+
+    fly.style.position="fixed";
+
+    fly.style.left=Math.random()*100+"vw";
+
+    fly.style.top=Math.random()*100+"vh";
+
+    fly.style.fontSize=(8+Math.random()*12)+"px";
+
+    fly.style.opacity=Math.random();
+
+    fly.style.pointerEvents="none";
+
+    fly.style.transition="4s linear";
+
+    document.body.appendChild(fly);
+
+    requestAnimationFrame(()=>{
+
+        fly.style.transform=
+        `translate(${(Math.random()-0.5)*200}px,
+        ${(Math.random()-0.5)*200}px)`;
+
+        fly.style.opacity="0";
+
+    });
+
+    setTimeout(()=>{
+
+        fly.remove();
+
+    },4000);
+
+}
+
+setInterval(createFirefly,500);
