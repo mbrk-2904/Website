@@ -681,3 +681,328 @@ rotate(720deg);
     }
 
 }
+
+/* ===========================
+   PART 4 - CAT INTERACTION
+=========================== */
+
+
+.cat{
+
+    cursor:pointer;
+
+}
+
+
+.catBlink{
+
+    animation:
+
+    blink .25s;
+
+}
+
+
+@keyframes blink{
+
+    0%{
+
+        transform:
+        scaleY(1);
+
+    }
+
+
+    50%{
+
+        transform:
+        scaleY(.75);
+
+    }
+
+
+    100%{
+
+        transform:
+        scaleY(1);
+
+    }
+
+}
+
+
+.catBubble{
+
+    position:absolute;
+
+    background:white;
+
+    color:#ff70ad;
+
+    padding:10px 18px;
+
+    border-radius:20px;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+    animation:
+
+    bubbleUp 2s forwards;
+
+}
+
+
+@keyframes bubbleUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(0);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(-70px);
+
+    }
+
+}
+
+.glass{
+
+    transition:.5s;
+
+}
+
+.glass:hover{
+
+    box-shadow:
+
+    0 0 35px rgba(255,120,180,.5);
+
+}
+
+#openLetter{
+
+    transition:.3s;
+
+}
+
+#openLetter:hover{
+
+    transform:
+
+    scale(1.08);
+
+    box-shadow:
+
+    0 0 20px hotpink;
+
+}
+
+body{
+
+    background-size:300% 300%;
+
+    animation:bgMove 15s ease infinite;
+
+}
+
+@keyframes bgMove{
+
+    0%{
+
+        background-position:0% 50%;
+
+    }
+
+    50%{
+
+        background-position:100% 50%;
+
+    }
+
+    100%{
+
+        background-position:0% 50%;
+
+    }
+
+}
+
+/* ===========================
+   PART 5 - RESPONSIVE
+=========================== */
+
+@media (max-width:768px){
+
+    .glass{
+
+        width:90%;
+
+        padding:25px;
+
+    }
+
+    h1{
+
+        font-size:28px;
+
+    }
+
+    p{
+
+        font-size:16px;
+
+    }
+
+    #photo{
+
+        width:180px;
+
+    }
+
+    .cat{
+
+        width:150px;
+
+    }
+
+    button{
+
+        width:100%;
+
+        margin-top:12px;
+
+    }
+
+    .choice{
+
+        height:140px;
+
+    }
+
+}
+
+button{
+
+    transition:.3s ease;
+
+}
+
+button:active{
+
+    transform:scale(.95);
+
+}
+
+.hidden{
+
+    display:none;
+
+}
+
+.fadeIn{
+
+    animation:fadeIn .7s ease;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ===========================
+   FINAL POLISH
+=========================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:linear-gradient(
+    hotpink,
+    #ff9ad5);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+*{
+
+    scroll-behavior:smooth;
+
+    -webkit-tap-highlight-color:transparent;
+
+}
+
+img{
+
+    user-select:none;
+
+    -webkit-user-drag:none;
+
+}
+
+#endTitle{
+
+    letter-spacing:2px;
+
+    animation:fadeTitle 1s;
+
+}
+
+@keyframes fadeTitle{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(-20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
