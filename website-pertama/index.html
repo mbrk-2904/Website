@@ -1,45 +1,413 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="id">
 <head>
-    <title>Web Niuniu</title>
-    <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Latihan PSTS Matematika Kelas 9 — PLDV & SPLDV</title>
+<style>
+    * { box-sizing: border-box; }
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f4f7fb;
+        color: #1f2937;
+        line-height: 1.6;
+    }
+    .container {
+        width: min(920px, 92%);
+        margin: 32px auto 60px;
+    }
+    .header {
+        background: linear-gradient(135deg, #2563eb, #4f46e5);
+        color: white;
+        padding: 28px;
+        border-radius: 20px;
+        box-shadow: 0 12px 30px rgba(37, 99, 235, .15);
+        margin-bottom: 22px;
+    }
+    .header h1 { margin: 0 0 8px; font-size: clamp(24px, 4vw, 34px); }
+    .header p { margin: 0; opacity: .92; }
+    .info {
+        margin-top: 14px;
+        display: inline-block;
+        padding: 7px 11px;
+        background: rgba(255,255,255,.15);
+        border-radius: 10px;
+        font-size: 14px;
+    }
+    .section-title {
+        margin: 28px 0 14px;
+        font-size: 22px;
+    }
+    .question {
+        background: white;
+        padding: 20px;
+        border-radius: 16px;
+        margin: 14px 0;
+        box-shadow: 0 5px 16px rgba(15, 23, 42, .06);
+        border: 1px solid #e5e7eb;
+    }
+    .question p { margin-top: 0; font-weight: 700; }
+    .option {
+        display: block;
+        padding: 10px 12px;
+        margin: 8px 0;
+        border: 1px solid #dbe1ea;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: .15s;
+        background: #fff;
+    }
+    .option:hover { background: #f8fbff; border-color: #93c5fd; }
+    .option input { margin-right: 9px; }
+    textarea {
+        width: 100%;
+        min-height: 120px;
+        resize: vertical;
+        padding: 12px;
+        border: 1px solid #cbd5e1;
+        border-radius: 10px;
+        font: inherit;
+        outline: none;
+    }
+    textarea:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37,99,235,.1); }
+    .actions {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 24px;
+        position: sticky;
+        bottom: 14px;
+        z-index: 10;
+    }
+    button {
+        border: 0;
+        padding: 12px 18px;
+        border-radius: 11px;
+        font-weight: 700;
+        cursor: pointer;
+        font-size: 15px;
+    }
+    #submitBtn { background: #2563eb; color: white; }
+    #resetBtn { background: #e5e7eb; color: #111827; }
+    button:hover { filter: brightness(.97); }
+    #result {
+        display: none;
+        margin-top: 18px;
+        background: #ecfdf5;
+        border: 1px solid #a7f3d0;
+        color: #065f46;
+        padding: 18px;
+        border-radius: 14px;
+        font-weight: 700;
+    }
+    .note {
+        font-size: 13px;
+        color: #64748b;
+        margin-top: 6px;
+    }
+    .number { color: #2563eb; }
+</style>
 </head>
-
 <body>
-    <div class="container">
-        <!-- NAVIGATION BAR-->
-        <div class="container-navbar">
-            <ul class="ul-navbar">
-                <li class="li-navbar">
-                    <a href="#" class="a-navbar">HOME</a>
-                </li>
-                <li class="li-navbar">
-                    <a href="about.html" class="a-navbar">ABOUT ME</a>
-                </li>
-                <li class="li-navbar">
-                    <a href="contact.html" class="a-navbar">CONTACT ME</a>
-                </li>
-            </ul>
-        </div>
-        <!-- NAVIGATION BAR SELESAI -->
+<div class="container">
+    <div class="header">
+        <h1>Latihan PSTS Matematika Kelas 9</h1>
+        <p>PLDV & SPLDV — 25 Pilihan Ganda + 5 Essay</p>
+        <div class="info">Pilih jawaban dengan klik opsi, lalu tekan “Kumpulkan Jawaban”.</div>
+    </div>
 
-        <!-- CONTENT 1 -->
-        <div class="container-content">
-            <a href="https://www.tiktok.com/@nihus_nii?_r=1&_t=ZS-985E5A8cLcw" 
-             class="a-content">
-                <img src="tiktok.png" class="img-content" />
-                <p>WAYAW WAYAW BGT LOH YA!</p>
-            </a>
+    <form id="quizForm">
+        <h2 class="section-title">A. Pilihan Ganda</h2>
 
+        <div class="question">
+            <p><span class="number">1.</span> Manakah yang merupakan Persamaan Linear Dua Variabel (PLDV)?</p>
+            <label class="option"><input type="radio" name="q1" value="A"> A. 2x + 3y = 12</label>
+            <label class="option"><input type="radio" name="q1" value="B"> B. x² + y = 8</label>
+            <label class="option"><input type="radio" name="q1" value="C"> C. 3x = 9</label>
+            <label class="option"><input type="radio" name="q1" value="D"> D. xy = 10</label>
         </div>
-        <!-- CONTENT 1 END -->
 
-        <!-- FOOTER -->
-        <div class="container-footer">
-            <h1 class="h1-footer">Website ini Dibuat Dengan Sepenuh Hati</h1>
+        <div class="question">
+            <p><span class="number">2.</span> Persamaan berikut yang <u>bukan</u> PLDV adalah ...</p>
+            <label class="option"><input type="radio" name="q2" value="A"> A. x + 4y = 10</label>
+            <label class="option"><input type="radio" name="q2" value="B"> B. 2x − y = 7</label>
+            <label class="option"><input type="radio" name="q2" value="C"> C. x² + 2y = 9</label>
+            <label class="option"><input type="radio" name="q2" value="D"> D. 5x + 3y = 15</label>
         </div>
-        <!-- FOOTER END -->
-</body>
+
+        <div class="question">
+            <p><span class="number">3.</span> Harga 2 buku dan 3 pensil adalah Rp19.000. Jika x menyatakan harga satu buku dan y harga satu pensil, model PLDV yang tepat adalah ...</p>
+            <label class="option"><input type="radio" name="q3" value="A"> A. 2x + 3y = 19.000</label>
+            <label class="option"><input type="radio" name="q3" value="B"> B. 2x − 3y = 19.000</label>
+            <label class="option"><input type="radio" name="q3" value="C"> C. 3x + 2y = 19.000</label>
+            <label class="option"><input type="radio" name="q3" value="D"> D. x + y = 19.000</label>
+        </div>
+
+        <div class="question">
+            <p><span class="number">4.</span> Pada persamaan 4x + 7y = 20, yang merupakan variabel adalah ...</p>
+            <label class="option"><input type="radio" name="q4" value="A"> A. 4 dan 7</label>
+            <label class="option"><input type="radio" name="q4" value="B"> B. x dan y</label>
+            <label class="option"><input type="radio" name="q4" value="C"> C. 20 saja</label>
+            <label class="option"><input type="radio" name="q4" value="D"> D. 4, 7, dan 20</label>
+        </div>
+
+        <div class="question">
+            <p><span class="number">5.</span> 3 pensil dan 2 buku berharga Rp16.000. Jika harga 1 buku Rp5.000, maka harga 1 pensil adalah ...</p>
+            <label class="option"><input type="radio" name="q5" value="A"> A. Rp1.500</label>
+            <label class="option"><input type="radio" name="q5" value="B"> B. Rp2.000</label>
+            <label class="option"><input type="radio" name="q5" value="C"> C. Rp2.500</label>
+            <label class="option"><input type="radio" name="q5" value="D"> D. Rp3.000</label>
+        </div>
+
+        <div class="question">
+            <p><span class="number">6.</span> 2 roti dan 3 susu berharga Rp27.000. Jika harga 1 roti Rp6.000, maka harga 1 susu adalah ...</p>
+            <label class="option"><input type="radio" name="q6" value="A"> A. Rp4.000</label>
+            <label class="option"><input type="radio" name="q6" value="B"> B. Rp5.000</label>
+            <label class="option"><input type="radio" name="q6" value="C"> C. Rp6.000</label>
+            <label class="option"><input type="radio" name="q6" value="D"> D. Rp7.000</label>
+        </div>
+
+        <div class="question">
+            <p><span class="number">7.</span> Diketahui 2x + 3y = 18. Jika x = 3, nilai y adalah ...</p>
+            <label class="option"><input type="radio" name="q7" value="A"> A. 2</label>
+            <label class="option"><input type="radio" name="q7" value="B"> B. 3</label>
+            <label class="option"><input type="radio" name="q7" value="C"> C. 4</label>
+            <label class="option"><input type="radio" name="q7" value="D"> D. 5</label>
+        </div>
+
+        <div class="question">
+            <p><span class="number">8.</span> Diketahui 5x − 2y = 16. Jika y = 2, nilai x adalah ...</p>
+            <label class="option"><input type="radio" name="q8" value="A"> A. 3</label>
+            <label class="option"><input type="radio" name="q8" value="B"> B. 4</label>
+            <label class="option"><input type="radio" name="q8" value="C"> C. 5</label>
+            <label class="option"><input type="radio" name="q8" value="D"> D. 6</label>
+        </div>
+
+        <div class="question">
+            <p><span class="number">9.</span> Manakah pasangan berurutan yang memenuhi persamaan 3x + y = 7?</p>
+            <label class="option"><input type="radio" name="q9" value="A"> A. (1, 4)</label>
+            <label class="option"><input type="radio" name="q9" value="B"> B. (2, 4)</label>
+            <label class="option"><input type="radio" name="q9" value="C"> C. (3, 2)</label>
+            <label class="option"><input type="radio" name="q9" value="D"> D. (4, 1)</label>
+        </div>
+
+        <div class="question">
+            <p><span class="number">10.</span> Titik (2, 3) merupakan penyelesaian suatu PLDV. Persamaan yang sesuai adalah ...</p>
+            <label class="option"><input type="radio" name="q10" value="A"> A. x + y = 4</label>
+            <label class="option"><input type="radio" name="q10" value="B"> B. 2x + y = 7</label>
+            <label class="option"><input type="radio" name="q10" value="C"> C. x + 2y = 9</label>
+            <label class="option"><input type="radio" name="q10" value="D"> D. 3x + y = 8</label>
+        </div>
+
+        <div class="question">
+            <p><span class="number">11.</span> Jika x = 4 dan y = 2, nilai 3x − 2y adalah ...</p>
+            <label class="option"><input type="radio" name="q11" value="A"> A. 6</label>
+            <label class="option"><input type="radio" name="q11" value="B"> B. 8</label>
+            <label class="option"><input type="radio" name="q11" value="C"> C. 10</label>
+            <label class="option"><input type="radio" name="q11" value="D"> D. 12</label>
+        </div>
+
+        <div class="question">
+            <p><span class="number">12.</span> 2 tiket dewasa dan 3 tiket anak-anak berharga Rp85.000. Misalkan x = harga tiket dewasa dan y = harga tiket anak. Model SPLDV yang mungkin digunakan adalah ...</p>
+            <label class="option"><input type="radio" name="q12" value="A"> A. 2x + 3y = 85.000</label>
+            <label class="option"><input type="radio" name="q12" value="B"> B. 2x − 3y = 85.000</label>
+            <label class="option"><input type="radio" name="q12" value="C"> C. x + y = 85.000</label>
+            <label class="option"><input type="radio" name="q12" value="D"> D. 3x + 2y = 85.000</label>
+        </div>
+
+        <div class="question">
+            <p><span class="number">13.</span> Berikut yang bukan merupakan metode umum untuk menyelesaikan SPLDV adalah ...</p>
+            <label class="option"><input type="radio" name="q13" value="A"> A. Grafik</label>
+            <label class="option"><input type="radio" name="q13" value="B"> B. Eliminasi</label>
+            <label class="option"><input type="radio" name="q13" value="C"> C. Substitusi</label>
+            <label class="option"><input type="radio" name="q13" value="D"> D. Faktorisasi kuadrat</label>
+        </div>
+
+        <div class="question">
+            <p><span class="number">14.</span> Pada metode grafik, himpunan penyelesaian SPLDV ditunjukkan oleh ...</p>
+            <label class="option"><input type="radio" name="q14" value="A"> A. titik potong kedua garis</label>
+            <label class="option"><input type="radio" name="q14" value="B"> B. titik paling kanan</label>
+            <label class="option"><input type="radio" name="q14" value="C"> C. titik paling atas</label>
+            <label class="option"><input type="radio" name="q14" value="D"> D. semua titik pada sumbu-x</label>
+        </div>
+
+        <div class="question">
+            <p><span class="number">15.</span> Metode campuran pada SPLDV pada dasarnya menggabungkan ...</p>
+            <label class="option"><input type="radio" name="q15" value="A"> A. grafik dan perkalian</label>
+            <label class="option"><input type="radio" name="q15" value="B"> B. eliminasi dan substitusi</label>
+            <label class="option"><input type="radio" name="q15" value="C"> C. faktorisasi dan grafik</label>
+            <label class="option"><input type="radio" name="q15" value="D"> D. penjumlahan dan pengurangan saja</label>
+        </div>
+
+        <div class="question">
+            <p><span class="number">16.</span> Dua garis pada grafik SPLDV berpotongan di titik (3, 2). Himpunan penyelesaiannya adalah ...</p>
+            <label class="option"><input type="radio" name="q16" value="A"> A. {(2, 3)}</label>
+            <label class="option"><input type="radio" name="q16" value="B"> B. {(3, 2)}</label>
+            <label class="option"><input type="radio" name="q16" value="C"> C. {(3, −2)}</label>
+            <label class="option"><input type="radio" name="q16" value="D"> D. {(−3, 2)}</label>
+        </div>
+
+        <div class="question">
+            <p><span class="number">17.</span> Tentukan penyelesaian SPLDV berikut: x + y = 7 dan x − y = 1.</p>
+            <label class="option"><input type="radio" name="q17" value="A"> A. (3, 4)</label>
+            <label class="option"><input type="radio" name="q17" value="B"> B. (4, 3)</label>
+            <label class="option"><input type="radio" name="q17" value="C"> C. (5, 2)</label>
+            <label class="option"><input type="radio" name="q17" value="D"> D. (2, 5)</label>
+        </div>
+
+        <div class="question">
+            <p><span class="number">18.</span> Tentukan penyelesaian SPLDV: 2x + y = 11 dan x + y = 7.</p>
+            <label class="option"><input type="radio" name="q18" value="A"> A. (3, 4)</label>
+            <label class="option"><input type="radio" name="q18" value="B"> B. (4, 3)</label>
+            <label class="option"><input type="radio" name="q18" value="C"> C. (5, 2)</label>
+            <label class="option"><input type="radio" name="q18" value="D"> D. (2, 5)</label>
+        </div>
+
+        <div class="question">
+            <p><span class="number">19.</span> Tentukan penyelesaian SPLDV: 3x + 2y = 16 dan x + y = 6.</p>
+            <label class="option"><input type="radio" name="q19" value="A"> A. (4, 2)</label>
+            <label class="option"><input type="radio" name="q19" value="B"> B. (2, 4)</label>
+            <label class="option"><input type="radio" name="q19" value="C"> C. (3, 3)</label>
+            <label class="option"><input type="radio" name="q19" value="D"> D. (5, 1)</label>
+        </div>
+
+        <div class="question">
+            <p><span class="number">20.</span> Tentukan penyelesaian SPLDV: 2x + 3y = 17 dan x + y = 7.</p>
+            <label class="option"><input type="radio" name="q20" value="A"> A. (4, 3)</label>
+            <label class="option"><input type="radio" name="q20" value="B"> B. (3, 4)</label>
+            <label class="option"><input type="radio" name="q20" value="C"> C. (5, 2)</label>
+            <label class="option"><input type="radio" name="q20" value="D"> D. (2, 5)</label>
+        </div>
+
+        <div class="question">
+            <p><span class="number">21.</span> Diketahui SPLDV 2x + y = 9 dan x − y = 3. Nilai x adalah ...</p>
+            <label class="option"><input type="radio" name="q21" value="A"> A. 2</label>
+            <label class="option"><input type="radio" name="q21" value="B"> B. 3</label>
+            <label class="option"><input type="radio" name="q21" value="C"> C. 4</label>
+            <label class="option"><input type="radio" name="q21" value="D"> D. 5</label>
+        </div>
+
+        <div class="question">
+            <p><span class="number">22.</span> Diketahui x + 2y = 11 dan 2x − y = 7. Nilai y adalah ...</p>
+            <label class="option"><input type="radio" name="q22" value="A"> A. 2</label>
+            <label class="option"><input type="radio" name="q22" value="B"> B. 3</label>
+            <label class="option"><input type="radio" name="q22" value="C"> C. 4</label>
+            <label class="option"><input type="radio" name="q22" value="D"> D. 5</label>
+        </div>
+
+        <div class="question">
+            <p><span class="number">23.</span> Jumlah dua bilangan adalah 18 dan selisihnya 4. Jika x dan y menyatakan kedua bilangan tersebut, pasangan yang memenuhi adalah ...</p>
+            <label class="option"><input type="radio" name="q23" value="A"> A. (11, 7)</label>
+            <label class="option"><input type="radio" name="q23" value="B"> B. (12, 6)</label>
+            <label class="option"><input type="radio" name="q23" value="C"> C. (10, 8)</label>
+            <label class="option"><input type="radio" name="q23" value="D"> D. (13, 5)</label>
+        </div>
+
+        <div class="question">
+            <p><span class="number">24.</span> Diketahui 3x + y = 14 dan x + y = 8. Nilai x + 2y adalah ...</p>
+            <label class="option"><input type="radio" name="q24" value="A"> A. 13</label>
+            <label class="option"><input type="radio" name="q24" value="B"> B. 14</label>
+            <label class="option"><input type="radio" name="q24" value="C"> C. 16</label>
+            <label class="option"><input type="radio" name="q24" value="D"> D. 18</label>
+        </div>
+
+        <div class="question">
+            <p><span class="number">25.</span> Harga 2 pulpen dan 1 buku adalah Rp13.000, sedangkan 1 pulpen dan 2 buku adalah Rp17.000. Harga 1 buku adalah ...</p>
+            <label class="option"><input type="radio" name="q25" value="A"> A. Rp5.000</label>
+            <label class="option"><input type="radio" name="q25" value="B"> B. Rp6.000</label>
+            <label class="option"><input type="radio" name="q25" value="C"> C. Rp7.000</label>
+            <label class="option"><input type="radio" name="q25" value="D"> D. Rp8.000</label>
+        </div>
+
+        <h2 class="section-title">B. Essay / Uraian</h2>
+
+        <div class="question">
+            <p><span class="number">1.</span> Kelompokkan persamaan berikut menjadi PLDV atau bukan PLDV, lalu beri alasan singkat:<br>
+            (a) 2x + 3y = 10 &nbsp;&nbsp; (b) x² + y = 7 &nbsp;&nbsp; (c) 5x − 2y = 4 &nbsp;&nbsp; (d) xy = 12</p>
+            <textarea name="e1" placeholder="Tulis jawaban dan alasanmu di sini..."></textarea>
+        </div>
+
+        <div class="question">
+            <p><span class="number">2.</span> Diketahui PLDV 3x + 2y = 16. Tentukan nilai x jika y = 2, dan tunjukkan langkah perhitungannya.</p>
+            <textarea name="e2" placeholder="Tulis langkah pengerjaanmu..."></textarea>
+        </div>
+
+        <div class="question">
+            <p><span class="number">3.</span> Di sebuah toko, 2 buku dan 3 pensil berharga Rp19.000, sedangkan 3 buku dan 1 pensil berharga Rp24.000. Buatlah model matematika SPLDV dari masalah tersebut.</p>
+            <textarea name="e3" placeholder="Tentukan variabel lalu tulis kedua persamaannya..."></textarea>
+        </div>
+
+        <div class="question">
+            <p><span class="number">4.</span> Tentukan himpunan penyelesaian SPLDV berikut dengan metode grafik: x + y = 6 dan x − y = 2. Tulis titik-titik yang kamu gunakan untuk menggambar kedua garis dan titik potongnya.</p>
+            <textarea name="e4" placeholder="Tulis langkah, titik bantu, dan titik potong..."></textarea>
+        </div>
+
+        <div class="question">
+            <p><span class="number">5.</span> Dengan metode campuran (eliminasi-substitusi), tentukan harga satuan pulpen dan buku jika:
+            <br>2 pulpen + 1 buku = Rp13.000
+            <br>1 pulpen + 2 buku = Rp17.000
+            <br>Tuliskan langkah-langkahnya.</p>
+            <textarea name="e5" placeholder="Tulis langkah eliminasi lalu substitusi..."></textarea>
+        </div>
+
+        <div class="actions">
+            <button type="button" id="submitBtn" onclick="gradeQuiz()">Kumpulkan Jawaban</button>
+            <button type="reset" id="resetBtn" onclick="resetResult()">Reset</button>
+        </div>
+        <div id="result"></div>
+        <p class="note">Catatan: nilai otomatis hanya menghitung 25 pilihan ganda. Essay dikerjakan untuk dinilai manual.</p>
+    </form>
 </div>
 
+<script>
+(function () {
+    // Kunci jawaban disimpan di JavaScript dan tidak ditampilkan di halaman.
+    // Penilaian hanya menghasilkan skor, bukan daftar jawaban benar.
+    const answerKey = [
+        "A","C","A","B","B",
+        "B","C","B","A","B",
+        "B","A","D","A","B",
+        "B","B","B","A","A",
+        "C","B","A","A","C"
+    ];
+
+    window.gradeQuiz = function () {
+        let score = 0;
+        let answered = 0;
+
+        for (let i = 1; i <= 25; i++) {
+            const selected = document.querySelector(`input[name="q${i}"]:checked`);
+            if (selected) {
+                answered++;
+                if (selected.value === answerKey[i - 1]) score++;
+            }
+        }
+
+        const result = document.getElementById("result");
+        result.style.display = "block";
+        result.innerHTML = `
+            <div>Hasil sementara</div>
+            <div style="font-size:26px; margin-top:4px;">${score} / 25 benar</div>
+            <div style="font-weight:600; margin-top:5px;">
+                Nilai pilihan ganda: ${(score / 25 * 100).toFixed(0)}
+                &nbsp;•&nbsp; Terjawab: ${answered}/25
+            </div>
+            <div style="font-weight:500; margin-top:7px;">
+                Kunci jawaban tidak ditampilkan. Essay belum dinilai otomatis.
+            </div>
+        `;
+        result.scrollIntoView({ behavior: "smooth", block: "center" });
+    };
+
+    window.resetResult = function () {
+        setTimeout(() => {
+            const result = document.getElementById("result");
+            result.style.display = "none";
+            result.innerHTML = "";
+        }, 0);
+    };
+})();
+</script>
+</body>
 </html>
